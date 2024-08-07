@@ -1,0 +1,61 @@
+{
+  "name": "@mbarlocker/vue-utils",
+  "type": "commonjs",
+  "version": "0.0.2",
+  "author": "Matthew Barlocker",
+  "description": "Common library of random vue utilities that I couldn't find elsewhere on the internet.",
+  "license": "MIT",
+  "packageManager": "yarn@4.3.1",
+  "homepage": "https://github.com/mbarlocker/vue-utils",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbarlocker/vue-utils.git"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "yarn.lock",
+    "LICENSE",
+    "README.md"
+  ],
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./*": {
+      "import": "./dist/esm/*",
+      "require": "./dist/cjs/*"
+    }
+  },
+  "scripts": {
+    "build": "yarn compile",
+    "clean": "rm -rf dist coverage",
+    "compile": "yarn compile:cjs && yarn compile:esm",
+    "compile:cjs": "tsc -p tsconfig.cjs.json",
+    "compile:esm": "tsc -p tsconfig.esm.json && ( echo '{\"type\": \"module\"}' > dist/esm/package.json )",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "env TZ=UTC vitest src --coverage --run"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitest/coverage-v8": "^2.0.5",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  },
+  "dependencies": {
+    "tslib": "^2.6.3",
+    "vue": "^3.4.34"
+  },
+  "keywords": [
+    "vue"
+  ]
+}

@@ -53,6 +53,7 @@
     "vitest": "^2.0.5"
   },
   "dependencies": {
+    "@vueuse/core": "^10.11.0",
     "lodash": "^4.17.21",
     "tslib": "^2.6.3",
     "vue": "^3.4.34"

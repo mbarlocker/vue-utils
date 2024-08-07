@@ -1,4 +1,5 @@
 import * as focus from './focus/index.js'
+import * as jumper from './jumper/index.js'
 import * as jwt from './jwt/index.js'
 import * as lazy from './lazy/index.js'
 import * as routerCoalesce from './router-coalesce/index.js'
@@ -7,6 +8,7 @@ import * as timezone from './timezone/index.js'
 import * as titleParts from './title-parts/index.js'
 
 export { focus as focus }
+export { jumper as jumper }
 export { jwt as jwt }
 export { lazy as lazy }
 export { routerCoalesce as routerCoalesce }
@@ -16,6 +18,7 @@ export { titleParts as titleParts }
 
 export default {
 	focus,
+	jumper,
 	jwt,
 	lazy,
 	routerCoalesce,

@@ -42,6 +42,7 @@
     "test": "env TZ=UTC vitest src --coverage --run"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.7",
     "@types/node": "^22.0.2",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
@@ -52,6 +53,7 @@
     "vitest": "^2.0.5"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "tslib": "^2.6.3",
     "vue": "^3.4.34"
   },

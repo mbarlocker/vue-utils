@@ -40,7 +40,6 @@ export function focusFirstEligible(element: Element | undefined | null, options?
 	for (const query of scopes) {
 		const children = element.querySelectorAll(query)
 
-		// eslint-disable-next-line @typescript-eslint/prefer-for-of
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i]
 			if (focus(child, options)) {

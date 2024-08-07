@@ -37,18 +37,12 @@
     "compile": "yarn compile:cjs && yarn compile:esm",
     "compile:cjs": "tsc -p tsconfig.cjs.json",
     "compile:esm": "tsc -p tsconfig.esm.json && ( echo '{\"type\": \"module\"}' > dist/esm/package.json )",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
     "test": "env TZ=UTC vitest src --coverage --run"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.7",
     "@types/node": "^22.0.2",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
     "@vitest/coverage-v8": "^2.0.5",
-    "eslint": "^8.57.0",
-    "eslint-plugin-import": "^2.29.1",
     "typescript": "^5.5.4",
     "vitest": "^2.0.5"
   },

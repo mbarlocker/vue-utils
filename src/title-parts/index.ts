@@ -19,7 +19,6 @@ watch(title, () => {
 })
 
 export const useTitle = (opts?: Partial<Options>) => {
-	// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 	const options: Options = defaultsDeep(opts, {
 		separator: ' | ',
 	})
@@ -30,8 +29,6 @@ export const useTitle = (opts?: Partial<Options>) => {
 
 	const replacePart = (index: number, replacement: string | Promise<string>) => {
 		const current: (string | Promise<string>)[] = [...parts.value]
-		
-		// eslint-disable-next-line @typescript-eslint/no-floating-promises
 		current.splice(index, 1, replacement)
 		return replaceParts(current)
 	}

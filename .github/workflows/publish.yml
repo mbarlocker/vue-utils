@@ -22,7 +22,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: |
           yarn install
-          yarn lint
           yarn clean
           yarn build
       - run: npm publish --access public .

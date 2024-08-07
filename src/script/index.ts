@@ -49,7 +49,6 @@ function createTag(src: string, options: Options): Promise<Return> {
 }
 
 export function load(src: string, opts?: Partial<Options>): Promise<Return> {
-	// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 	const options: Options = defaultsDeep(opts, {
 		type: 'text/javascript',
 		async: true,

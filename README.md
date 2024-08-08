@@ -16,7 +16,21 @@ yarn add @mbarlocker/vue-utils
 
 ## Utilities
 
+* [apexchart](./src/apexchart/README.me)
+* [bootstrap-directives](./src/bootstrap-directives/README.me)
+* [bootstrap-popovers](./src/bootstrap-popovers/README.me)
+* [bootstrap-tooltips](./src/bootstrap-tooltips/README.me)
 * [focus](./src/focus/README.me)
+* [jumper](./src/jumper/README.me)
+* [jwt](./src/jwt/README.me)
+* [lazy](./src/lazy/README.me)
+* [promised](./src/promised/README.me)
+* [router-canonical](./src/router-canonical/README.me)
+* [router-coalesce](./src/router-coalesce/README.me)
+* [router-plugin](./src/router-plugin/README.me)
+* [router-proxy](./src/router-proxy/README.me)
+* [timezone](./src/timezone/README.me)
+* [title-parts](./src/title-parts/README.me)
 
 ## License
 

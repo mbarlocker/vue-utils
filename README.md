@@ -16,21 +16,21 @@ yarn add @mbarlocker/vue-utils
 
 ## Utilities
 
-* [apexchart](./src/apexchart/README.me)
-* [bootstrap-directives](./src/bootstrap-directives/README.me)
-* [bootstrap-popovers](./src/bootstrap-popovers/README.me)
-* [bootstrap-tooltips](./src/bootstrap-tooltips/README.me)
-* [focus](./src/focus/README.me)
-* [jumper](./src/jumper/README.me)
-* [jwt](./src/jwt/README.me)
-* [lazy](./src/lazy/README.me)
-* [promised](./src/promised/README.me)
-* [router-canonical](./src/router-canonical/README.me)
-* [router-coalesce](./src/router-coalesce/README.me)
-* [router-plugin](./src/router-plugin/README.me)
-* [router-proxy](./src/router-proxy/README.me)
-* [timezone](./src/timezone/README.me)
-* [title-parts](./src/title-parts/README.me)
+* [apexchart](./src/apexchart/README.md)
+* [bootstrap-directives](./src/bootstrap-directives/README.md)
+* [bootstrap-popovers](./src/bootstrap-popovers/README.md)
+* [bootstrap-tooltips](./src/bootstrap-tooltips/README.md)
+* [focus](./src/focus/README.md)
+* [jumper](./src/jumper/README.md)
+* [jwt](./src/jwt/README.md)
+* [lazy](./src/lazy/README.md)
+* [promised](./src/promised/README.md)
+* [router-canonical](./src/router-canonical/README.md)
+* [router-coalesce](./src/router-coalesce/README.md)
+* [router-plugin](./src/router-plugin/README.md)
+* [router-proxy](./src/router-proxy/README.md)
+* [timezone](./src/timezone/README.md)
+* [title-parts](./src/title-parts/README.md)
 
 ## License
 

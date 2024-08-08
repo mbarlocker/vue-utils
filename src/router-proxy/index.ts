@@ -169,5 +169,3 @@ export function useRoutedProxy() {
 		paramTyped,
 	}
 }
-
-export default useRoutedProxy

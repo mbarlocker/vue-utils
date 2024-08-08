@@ -55,5 +55,3 @@ export const useJumper = () => {
 		keep,
 	}
 }
-
-export default useJumper

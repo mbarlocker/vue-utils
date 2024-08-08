@@ -9,7 +9,7 @@ export const plugin: Plugin = {
 
 			let link: HTMLLinkElement | null = document.querySelector("link[rel='canonical']")
 			if (!link) {
-				link = document.createElement('link')
+				link = document.createElement('link') as HTMLLinkElement
 				link.setAttribute('rel', 'canonical')
 				document.head.appendChild(link)
 			}
@@ -21,5 +21,3 @@ export const plugin: Plugin = {
 		})
 	},
 }
-
-export default plugin

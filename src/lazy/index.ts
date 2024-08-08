@@ -10,5 +10,3 @@ export function lazy<T>(fn: () => T): () => T {
 		return result
 	}
 }
-
-export default lazy

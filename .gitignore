@@ -18,6 +18,9 @@ coverage
 # TypeScript cache
 *.tsbuildinfo
 
+# Rollup
+.rollup.cache
+
 # Output of 'npm pack'
 *.tgz
 

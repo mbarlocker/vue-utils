@@ -25,8 +25,3 @@ export const coalesceMultiple = <T>(value: T | Array<T | null> | null): undefine
 }
 
 export const coalesce = coalesceSingle
-
-export default {
-	coalesceSingle,
-	coalesceMultiple,
-}

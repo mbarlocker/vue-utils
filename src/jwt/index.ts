@@ -28,12 +28,3 @@ export function parseHeader(value: string): unknown {
 export function parsePayload(value: string): unknown {
 	return JSON.parse(getPayload(value)) as unknown
 }
-
-export default {
-	decode,
-	getHeader,
-	getPayload,
-	getSignature,
-	parseHeader,
-	parsePayload,
-}

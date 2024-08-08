@@ -40,5 +40,3 @@ export const mappedDirective = <T extends { dispose(): void }>(app: App, directi
 		},
 	})
 }
-
-export default mappedDirective

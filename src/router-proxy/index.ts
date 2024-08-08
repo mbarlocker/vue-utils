@@ -23,7 +23,7 @@ function intify(value: string): number { return parseInt(value) }
 function floatify(value: string): number { return parseFloat(value) }
 function boolify(value: string): boolean { return ['true','t','1'].includes(value.toLowerCase()) }
 
-export function useRoutedProxy() {
+export function useRouterProxy() {
 	const router = useRouter()
 	const route = useRoute()
 

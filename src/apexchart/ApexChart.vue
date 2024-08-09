@@ -3,12 +3,12 @@
 </template>
 
 <script lang="ts">
-import ApexCharts from 'apexcharts'
 import type { ApexOptions } from 'apexcharts'
+import type { PropType } from 'vue'
+import { default as ApexCharts } from 'apexcharts'
 import { defineComponent } from 'vue'
 import { onMounted } from 'vue'
 import { onUnmounted } from 'vue'
-import { PropType } from 'vue'
 import { ref } from 'vue'
 import { watch } from 'vue'
 

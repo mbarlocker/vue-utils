@@ -1,6 +1,6 @@
+import type { Plugin } from '../router-plugin/index.js'
 import type { Router } from 'vue-router'
 import { isNavigationFailure } from 'vue-router'
-import { Plugin } from '../router-plugin/index.js'
 
 export const plugin: Plugin = {
 	install: function(router: Router) {

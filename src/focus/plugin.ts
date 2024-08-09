@@ -1,7 +1,7 @@
 import type { FocusOptions } from './functions.js'
+import type { Plugin } from 'vue'
 import { focus } from './functions.js'
 import { focusFirstEligible } from './functions.js'
-import { Plugin } from 'vue'
 
 export const plugin: Plugin = {
 	install(app, options: FocusOptions) {

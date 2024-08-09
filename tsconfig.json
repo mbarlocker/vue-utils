@@ -2,13 +2,12 @@
 	"compilerOptions": {
 		"target": "esnext",
 		"module": "esnext",
-		"moduleResolution": "bundler",
-    "forceConsistentCasingInFileNames": true,
-    "importHelpers": true,
-    "allowSyntheticDefaultImports": true,
+		"moduleResolution": "node",
+		"forceConsistentCasingInFileNames": true,
+		"importHelpers": true,
+		"allowSyntheticDefaultImports": true,
 		"declaration": true,
-		"declarationDir": "dist",
-    "outDir": "dist",
+		"outDir": "dist",
 		"baseUrl": ".",
 		"lib": [
 			"ESNext",
@@ -17,6 +16,8 @@
 	},
 	"include": [
 		"src/**/*.ts",
+		"src/**/*.d.ts",
+		"src/**/*.tsx",
 		"src/**/*.vue",
 	],
 	"exclude": [

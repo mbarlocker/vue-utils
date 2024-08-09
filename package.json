@@ -18,25 +18,20 @@
     "LICENSE",
     "README.md"
   ],
-  "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.js"
     },
     "./*": {
-      "types": "./dist/*.d.ts",
-      "import": "./dist/*.js",
-      "require": "./dist/*.cjs"
+      "import": "./dist/*"
     }
   },
   "scripts": {
     "build": "yarn compile",
     "clean": "rm -rf dist coverage .rollup.cache",
-    "compile": "vite build",
+    "compile": "vue-tsc",
     "test": "env TZ=UTC vitest src --coverage --run"
   },
   "devDependencies": {
@@ -51,8 +46,6 @@
     "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.5.4",
-    "vite": "^5.3.5",
-    "vite-plugin-dts": "^4.0.1",
     "vitest": "^2.0.5",
     "vue-tsc": "^2.0.29"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@mbarlocker/vue-utils",
-  "type": "commonjs",
+  "type": "module",
   "version": "0.0.5",
   "author": "Matthew Barlocker",
   "description": "Common library of random vue utilities that I couldn't find elsewhere on the internet.",
@@ -18,25 +18,20 @@
     "LICENSE",
     "README.md"
   ],
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
+  "module": "./dist/index.js",
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "import": "./dist/index.js"
     },
     "./*": {
-      "import": "./dist/esm/*",
-      "require": "./dist/cjs/*"
+      "import": "./dist/*"
     }
   },
   "scripts": {
     "build": "yarn compile",
-    "clean": "rm -rf dist coverage",
-    "compile": "yarn compile:cjs && yarn compile:esm",
-    "compile:cjs": "vue-tsc -p tsconfig.cjs.json",
-    "compile:esm": "vue-tsc -p tsconfig.esm.json && ( echo '{\"type\": \"module\"}' > dist/esm/package.json )",
+    "clean": "rm -rf dist coverage .rollup.cache",
+    "compile": "vue-tsc",
     "test": "env TZ=UTC vitest src --coverage --run"
   },
   "devDependencies": {

@@ -13,6 +13,7 @@
   },
   "files": [
     "dist",
+    "src",
     "package.json",
     "yarn.lock",
     "LICENSE",
@@ -24,14 +25,19 @@
     ".": {
       "import": "./dist/index.js"
     },
+    "./*.vue": {
+      "import": "./src/*.vue"
+    },
     "./*": {
       "import": "./dist/*"
     }
   },
   "scripts": {
     "build": "yarn compile",
-    "clean": "rm -rf dist coverage .rollup.cache",
-    "compile": "vue-tsc",
+    "clean": "rm -rf dist coverage",
+    "compile": "yarn compile:library && yarn compile:components",
+    "compile:library": "tsc -p tsconfig.library.json",
+    "compile:components": "vite build && vue-tsc -p tsconfig.components.json",
     "test": "env TZ=UTC vitest src --coverage --run"
   },
   "devDependencies": {
@@ -44,8 +50,9 @@
     "@vue/tsconfig": "^0.5.1",
     "rollup": "^4.20.0",
     "rollup-plugin-auto-external": "^2.0.0",
-    "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.5.4",
+    "vite": "^5.4.0",
+    "vite-plugin-dts": "^4.0.2",
     "vitest": "^2.0.5",
     "vue-tsc": "^2.0.29"
   },

@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"outDir": "dist",
+		"baseUrl": ".",
+		"lib": [
+			"ESNext",
+			"DOM",
+		],
+		"strict": true,
+		"emitDeclarationOnly": true,
+		"declaration": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"skipLibCheck": true,
+	},
+	"include": [
+		"src/**/*.vue",
+	],
+	"exclude": [
+		"src/**/__tests__/*",
+	],
+}

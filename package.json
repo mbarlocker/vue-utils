@@ -56,15 +56,15 @@
     "vitest": "^2.0.5",
     "vue-tsc": "^2.0.29"
   },
-  "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "@vueuse/core": "^10.11.0",
-    "apexcharts": "^3.51.0",
-    "bootstrap": "^5.3.3",
-    "lodash": "^4.17.21",
-    "tslib": "^2.6.3",
-    "vue": "^3.4.34",
-    "vue-router": "^4.4.3"
+  "peerDependencies": {
+    "@popperjs/core": "~2.11.8",
+    "@vueuse/core": "~10.11.0",
+    "apexcharts": "~3.51.0",
+    "bootstrap": "~5.3.3",
+    "lodash": "~4.17.21",
+    "tslib": "~2.6.3",
+    "vue": "~3.4.34",
+    "vue-router": "~4.4.3"
   },
   "keywords": [
     "vue",

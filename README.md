@@ -37,10 +37,8 @@ yarn add @mbarlocker/vue-utils
 ## Components
 
 * [apexchart](./src/apexchart/README.md)
-* [bootstrap-collapse](./src/bootstrap-collapse/README.md)
+* [bootstrap-containers](./src/bootstrap-containers/README.md)
 * [bootstrap-inputs](./src/bootstrap-inputs/README.md)
-* [bootstrap-modal](./src/bootstrap-modal/README.md)
-* [bootstrap-offcanvas](./src/bootstrap-offcanvas/README.md)
 * [bootstrap-pagination](./src/bootstrap-pagination/README.md)
 * [loading-button](./src/loading-button/README.md)
 * [promised](./src/promised/README.md)

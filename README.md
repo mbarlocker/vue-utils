@@ -37,8 +37,9 @@ yarn add @mbarlocker/vue-utils
 ## Components
 
 * [apexchart](./src/apexchart/README.md)
-* [bootstrap-checkbox-button](./src/bootstrap-checkbox-button/README.md)
 * [bootstrap-checkbox-button-group](./src/bootstrap-checkbox-button-group/README.md)
+* [bootstrap-checkbox-button](./src/bootstrap-checkbox-button/README.md)
+* [bootstrap-collapse](./src/bootstrap-collapse/README.md)
 * [bootstrap-pagination](./src/bootstrap-pagination/README.md)
 * [bootstrap-radio-button-group](./src/bootstrap-radio-button-group/README.md)
 * [loading-button](./src/loading-button/README.md)

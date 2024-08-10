@@ -294,6 +294,7 @@ __metadata:
     "@vitejs/plugin-vue": "npm:^5.1.1"
     "@vitest/coverage-v8": "npm:^2.0.5"
     "@vue/tsconfig": "npm:^0.5.1"
+    "@vueuse/components": "npm:^10.11.1"
     "@vueuse/core": "npm:^10.11.0"
     apexcharts: "npm:^3.51.0"
     glob: "npm:^11.0.0"
@@ -308,6 +309,7 @@ __metadata:
     vue-tsc: "npm:^2.0.29"
   peerDependencies:
     "@popperjs/core": ^2.11.8
+    "@vueuse/components": ^10.11.1
     "@vueuse/core": ^10.11.0
     apexcharts: ^3.51.0
     bootstrap: ^5.3.3
@@ -972,7 +974,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:^10.11.0":
+"@vueuse/components@npm:^10.11.1":
+  version: 10.11.1
+  resolution: "@vueuse/components@npm:10.11.1"
+  dependencies:
+    "@vueuse/core": "npm:10.11.1"
+    "@vueuse/shared": "npm:10.11.1"
+    vue-demi: "npm:>=0.14.8"
+  checksum: 10c0/5c3616cc14c095a989b245ee51fff88332e01805954da4db21b92526d99cbabf87dffc2e1121da50dc3e4f0e191988925507e4f28f8489c11e9bb8b997a5d279
+  languageName: node
+  linkType: hard
+
+"@vueuse/core@npm:10.11.1, @vueuse/core@npm:^10.11.0":
   version: 10.11.1
   resolution: "@vueuse/core@npm:10.11.1"
   dependencies:

@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import BootstrapCheckboxButton from '../bootstrap-checkbox-button/BootstrapCheckboxButton.vue'
+import BootstrapCheckboxButton from './BootstrapCheckboxButton.vue'
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
 import { ref } from 'vue'

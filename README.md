@@ -14,23 +14,35 @@ This library will probably balloon with dependencies, but it shouldn't matter si
 yarn add @mbarlocker/vue-utils
 ```
 
-## Utilities
+## Libraries
 
-* [apexchart](./src/apexchart/README.md)
-* [bootstrap-directives](./src/bootstrap-directives/README.md)
-* [bootstrap-popovers](./src/bootstrap-popovers/README.md)
-* [bootstrap-tooltips](./src/bootstrap-tooltips/README.md)
-* [focus](./src/focus/README.md)
 * [jumper](./src/jumper/README.md)
 * [jwt](./src/jwt/README.md)
 * [lazy](./src/lazy/README.md)
-* [promised](./src/promised/README.md)
+* [focus](./src/focus/README.md)
 * [router-canonical](./src/router-canonical/README.md)
 * [router-coalesce](./src/router-coalesce/README.md)
 * [router-plugin](./src/router-plugin/README.md)
 * [router-proxy](./src/router-proxy/README.md)
 * [timezone](./src/timezone/README.md)
 * [title-parts](./src/title-parts/README.md)
+
+## Directives
+
+* [bootstrap-directives](./src/bootstrap-directives/README.md)
+* [bootstrap-popovers](./src/bootstrap-popovers/README.md)
+* [bootstrap-tooltips](./src/bootstrap-tooltips/README.md)
+* [focus](./src/focus/README.md)
+
+## Components
+
+* [apexchart](./src/apexchart/README.md)
+* [bootstrap-checkbox-button](./src/bootstrap-checkbox-button/README.md)
+* [bootstrap-checkbox-button-group](./src/bootstrap-checkbox-button-group/README.md)
+* [bootstrap-pagination](./src/bootstrap-pagination/README.md)
+* [bootstrap-radio-button-group](./src/bootstrap-radio-button-group/README.md)
+* [loading-button](./src/loading-button/README.md)
+* [promised](./src/promised/README.md)
 
 ## License
 

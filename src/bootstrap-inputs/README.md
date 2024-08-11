@@ -75,6 +75,42 @@ Works with most (all?) types of standard inputs (number, color, date, datetime-l
 ```
 
 
+## BootstrapSelect
+
+Simplified select input with some helpers. Has slots:
+
+* prepend
+* prependText
+* help
+* append
+* appendText
+
+```html
+<BootstrapSelect
+	v-model="selected"
+	:options="[
+		{ id: '1', name: 'Option 1', disabled: false, group: 'Group 1' },
+		{ id: '2', name: 'Option 2', disabled: false, group: 'Group 1' },
+	]"
+	label="Select One"
+	placeholder="None"
+	disabled
+	readonly
+	textonly
+	autofocus
+	emptyOption
+	helpText="This is to check something"
+	trim
+	noMargin
+	prependIcon="fas fa-plus"
+	appendIcon="fas fa-plus"
+	:containerAttrs="{}"
+	@focus="onFocus()"
+	@blur="onBlur()"
+/>
+```
+
+
 ## BootstrapFile
 
 Simplified file input with some helpers. Has slots:

@@ -242,3 +242,10 @@ Simplified vue component for [Bootstrap radio button](https://getbootstrap.com/d
 	size="lg"
 />
 ```
+
+
+## BootstrapDropdown
+
+Base class for autocomplete. Has a text input box and a dropdown container.
+There are no options for the dropdown, just an empty slot `default` where you can drop
+your own options.

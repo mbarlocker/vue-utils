@@ -24,6 +24,40 @@ Simplified checkbox with some helpers. Has a `default` slot for label and a `hel
 ```
 
 
+## BootstrapFile
+
+Simplified file input with some helpers. Has slots:
+
+* prepend
+* prependText
+* help
+* append
+* appendText
+
+The model is an array of uploaded files. The type of these files is UploadedFile (exported by the vue file).
+To read the contents, whether binary or text, use the functions on this UploadedFile interface.
+
+```html
+<BootstrapFile
+	v-model="files"
+	label="Upload some files"
+	disabled
+	readonly
+	autofocus
+	helpText="This is to check something"
+	noMargin
+	prependIcon="fas fa-plus"
+	appendIcon="fas fa-plus"
+	buttonClass="btn-outline-secondary"
+	readImmediately
+	:containerAttrs="{}"
+	@focus="onFocus()"
+	@blur="onBlur()"
+	@change="onChange()"
+/>
+```
+
+
 ## BootstrapCheckboxButton
 
 Simplified vue component for [Bootstrap checkbox button](https://getbootstrap.com/docs/5.3/forms/checks-radios/#checkbox-toggle-buttons).

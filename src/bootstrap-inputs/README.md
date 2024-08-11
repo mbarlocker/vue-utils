@@ -3,6 +3,27 @@
 A bunch of simplified components for a subset of bootstrap form inputs.
 
 
+## BootstrapCheckbox
+
+Simplified checkbox with some helpers. Has a `default` slot for label and a `help` slot for help text.
+
+```html
+<BootstrapCheckbox
+	v-model="checked"
+	label="My checkbox"
+	autofocus
+	helpText="This is to check something"
+	noMargin
+	useSwitch
+	useButton
+	buttonClass="btn-outline-secondary"
+	:containerAttrs="{}"
+	@focus="onFocus()"
+	@blur="onBlur()"
+/>
+```
+
+
 ## BootstrapCheckboxButton
 
 Simplified vue component for [Bootstrap checkbox button](https://getbootstrap.com/docs/5.3/forms/checks-radios/#checkbox-toggle-buttons).

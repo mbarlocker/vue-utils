@@ -111,6 +111,20 @@ Simplified select input with some helpers. Has slots:
 ```
 
 
+## BootstrapSelectBoolean
+
+Select with 2 options. Same properties, attributes, slots, and events as a BootstrapSelect
+
+```html
+<BootstrapSelectBoolean
+	v-model="value"
+	falseName="Nope"
+	trueName="Yup"
+	label="Want some ice cream?"
+/>
+```
+
+
 ## BootstrapFile
 
 Simplified file input with some helpers. Has slots:

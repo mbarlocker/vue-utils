@@ -249,3 +249,32 @@ Simplified vue component for [Bootstrap radio button](https://getbootstrap.com/d
 Base class for autocomplete. Has a text input box and a dropdown container.
 There are no options for the dropdown, just an empty slot `default` where you can drop
 your own options.
+
+
+## Autocomplete
+
+There are two types of autocomplete: Dynamic and Static.
+
+The static autocomplete wraps the dynamic autocomplete with a list of options.
+The dynamic autocomplete takes a search function as a prop. This function returns a promise of array of options.
+When the autocomplete text input changes, the search function is ran and the results get updated.
+
+```html
+<AutocompleteDynamic
+	v-model:text="searchText"
+	v-model:selection="selectedOption"
+	:search="searchForValues"
+	required
+	:maxOptions="10"
+	@selected="onSelected"
+/>
+```
+
+```html
+<AutocompleteStatic
+	v-model:text="searchText"
+	v-model:selection="selectedOption"
+	:options="arrayOfOptions"
+	:searchableFields="['name', 'email', 'username']"
+/>
+```

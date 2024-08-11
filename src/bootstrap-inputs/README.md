@@ -278,3 +278,21 @@ When the autocomplete text input changes, the search function is ran and the res
 	:searchableFields="['name', 'email', 'username']"
 />
 ```
+
+
+## JsonSchemaInput
+
+This isn't bootstrap per se, but it relies on the bootstrap inputs and will often times be the input of choice
+if you've got a library of json schema apis.
+
+```html
+<SchemaInput
+	v-model="email"
+	label="Email"
+	:schema="fields.email"
+	trim
+	required
+	autofocus
+	autocomplete="email"
+/>
+```

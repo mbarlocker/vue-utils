@@ -36,6 +36,45 @@ Simplified checkbox with some helpers. Has a `default` slot for label and a `hel
 ```
 
 
+## BootstrapInput
+
+Simplified input with some helpers. Has slots:
+
+* prepend
+* prependText
+* help
+* append
+* appendText
+
+It also has a boolean for trim, because the vue directive for trimming sucks and isn't easy to use when users delete text or use spaces.
+
+Works with most (all?) types of standard inputs (number, color, date, datetime-local, email, etc)
+
+```html
+<BootstrapInput
+	v-model="text"
+	type="text"
+	label="Text input"
+	disabled
+	readonly
+	textonly
+	autofocus
+	helpText="This is to check something"
+	trim
+	noMargin
+	prependIcon="fas fa-plus"
+	appendIcon="fas fa-plus"
+	:containerAttrs="{}"
+	@focus="onFocus()"
+	@blur="onBlur()"
+	@change="onChange()"
+	@keypress="onKeypress()"
+	@keyup="onKeyup()"
+	@keydown="onKeydown()"
+/>
+```
+
+
 ## BootstrapFile
 
 Simplified file input with some helpers. Has slots:

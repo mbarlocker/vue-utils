@@ -33,6 +33,7 @@ yarn add @mbarlocker/vue-utils
 * [bootstrap-popovers](./src/bootstrap-popovers/README.md)
 * [bootstrap-tooltips](./src/bootstrap-tooltips/README.md)
 * [focus](./src/focus/README.md)
+* [fontawesome](./src/fontawesome/README.md)
 
 ## Components
 
@@ -40,6 +41,7 @@ yarn add @mbarlocker/vue-utils
 * [bootstrap-containers](./src/bootstrap-containers/README.md)
 * [bootstrap-inputs](./src/bootstrap-inputs/README.md)
 * [bootstrap-pagination](./src/bootstrap-pagination/README.md)
+* [fontawesome](./src/fontawesome/README.md)
 * [loading-button](./src/loading-button/README.md)
 * [promised](./src/promised/README.md)
 

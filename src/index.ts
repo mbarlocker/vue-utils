@@ -1,6 +1,7 @@
 export * as bootstrapPopovers from './bootstrap-popovers/index.js'
 export * as bootstrapTooltips from './bootstrap-tooltips/index.js'
 export * as focus from './focus/index.js'
+export * as fontawesome from './fontawesome/index.js'
 export * as jumper from './jumper/index.js'
 export * as jwt from './jwt/index.js'
 export * as lazy from './lazy/index.js'

@@ -6,7 +6,7 @@
 		:class="{ 'mb-3': !noMargin }"
 	>
 		<div ref="inputContainer">
-			<BaseInput
+			<BootstrapInput
 				ref="inputElement"
 				v-bind="$attrs"
 				v-model="modelValue"
@@ -24,7 +24,7 @@
 				<template v-slot:append v-if="$slots.append"><slot name="append" /></template>
 				<template v-slot:appendText v-if="$slots.appendText"><slot name="appendText" /></template>
 				<template v-slot:help v-if="$slots.help"><slot name="help" /></template>
-			</BaseInput>
+			</BootstrapInput>
 		</div>
 
 		<div ref="dropdownContainer" class="dropdown-menu shadow-lg p-0 m-0" :class="{'show': showDropdown && !hideDropdown}">
@@ -34,6 +34,7 @@
 </template>
 
 <script lang="ts">
+import BootstrapInput from './BootstrapInput.vue'
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
 import { vOnClickOutside } from '@vueuse/components'

@@ -3,6 +3,18 @@
 A bunch of simplified components for a subset of bootstrap form inputs.
 
 
+## BootstrapForm
+
+A form that checks validity on submit, and then enables errors and warnings in Bootstrap
+
+```html
+<BootstrapForm
+	disabled
+	@submit="onSubmit()"
+/>
+```
+
+
 ## BootstrapCheckbox
 
 Simplified checkbox with some helpers. Has a `default` slot for label and a `help` slot for help text.

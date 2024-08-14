@@ -13,11 +13,19 @@ export function useCookie(name: string, options?: Attributes | Library) {
 
 	const trigger = ref(0)
 
-	const get = () => lib.get(name)
-	const set = (value: string) => {
-		trigger.value++
-		lib.set(name, value)
+	const get = () => {
+		return lib.get(name)
 	}
+
+	const exists = () => {
+		return lib.get(name) !== undefined
+	}
+
+	const set = (value: string, options?: Attributes) => {
+		trigger.value++
+		lib.set(name, value, options)
+	}
+
 	const remove = () => {
 		trigger.value++
 		lib.remove(name)

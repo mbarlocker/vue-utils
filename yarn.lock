@@ -397,6 +397,7 @@ __metadata:
     apexcharts: ^3.51.0
     bootstrap: ^5.3.3
     js-cookie: ^3.0.5
+    json-schema-to-ts: ^3.1.0
     lodash: ^4.17.21
     tslib: ^2.6.3
     vue: ^3.4.34

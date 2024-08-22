@@ -32,18 +32,13 @@ export default defineComponent({
 		function handleSubmit() {
 			if (!props.disabled) {
 				context.emit('submit')
+				validated.value = false
 			}
-		}
-
-		function reportValidity() {
-			if (!form.value) { return true }
-			return form.value.reportValidity()
 		}
 
 		return {
 			form,
 			handleSubmit,
-			reportValidity,
 			validated,
 		}
 	},

@@ -1,10 +1,10 @@
 
 export function decode(value: string) {
-	const parts: string[] = value.split('.').map(x => atob(x))
+	const parts: string[] = value.split('.')
 
 	return {
-		header: parts[0],
-		payload: parts[1],
+		header: atob(parts[0]),
+		payload: atob(parts[1]),
 		signature: parts[2],
 	}
 }

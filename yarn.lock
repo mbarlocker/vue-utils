@@ -362,7 +362,6 @@ __metadata:
     "@fortawesome/vue-fontawesome": "npm:^3.0.8"
     "@popperjs/core": "npm:^2.11.8"
     "@types/bootstrap": "npm:^5.2.10"
-    "@types/js-cookie": "npm:^3.0.6"
     "@types/lodash": "npm:^4.17.7"
     "@types/node": "npm:^22.0.2"
     "@types/rollup-plugin-auto-external": "npm:^2"
@@ -373,7 +372,6 @@ __metadata:
     "@vueuse/core": "npm:^10.11.0"
     apexcharts: "npm:^3.51.0"
     glob: "npm:^11.0.0"
-    js-cookie: "npm:^3.0.5"
     json-schema-to-ts: "npm:^3.1.0"
     rollup: "npm:^4.20.0"
     rollup-plugin-auto-external: "npm:^2.0.0"
@@ -396,7 +394,6 @@ __metadata:
     "@vueuse/core": ^10.11.0
     apexcharts: ^3.51.0
     bootstrap: ^5.3.3
-    js-cookie: ^3.0.5
     json-schema-to-ts: ^3.1.0
     lodash: ^4.17.21
     tslib: ^2.6.3
@@ -700,13 +697,6 @@ __metadata:
   version: 1.0.5
   resolution: "@types/estree@npm:1.0.5"
   checksum: 10c0/b3b0e334288ddb407c7b3357ca67dbee75ee22db242ca7c56fe27db4e1a31989cb8af48a84dd401deb787fe10cc6b2ab1ee82dc4783be87ededbe3d53c79c70d
-  languageName: node
-  linkType: hard
-
-"@types/js-cookie@npm:^3.0.6":
-  version: 3.0.6
-  resolution: "@types/js-cookie@npm:3.0.6"
-  checksum: 10c0/173afaf5ea9d86c22395b9d2a00b6adb0006dcfef165d6dcb0395cdc32f5a5dcf9c3c60f97194119963a15849b8f85121e1ae730b03e40bc0c29b84396ba22f9
   languageName: node
   linkType: hard
 
@@ -2013,13 +2003,6 @@ __metadata:
   version: 1.4.0
   resolution: "jju@npm:1.4.0"
   checksum: 10c0/f3f444557e4364cfc06b1abf8331bf3778b26c0c8552ca54429bc0092652172fdea26cbffe33e1017b303d5aa506f7ede8571857400efe459cb7439180e2acad
-  languageName: node
-  linkType: hard
-
-"js-cookie@npm:^3.0.5":
-  version: 3.0.5
-  resolution: "js-cookie@npm:3.0.5"
-  checksum: 10c0/04a0e560407b4489daac3a63e231d35f4e86f78bff9d792011391b49c59f721b513411cd75714c418049c8dc9750b20fcddad1ca5a2ca616c3aca4874cce5b3a
   languageName: node
   linkType: hard
 

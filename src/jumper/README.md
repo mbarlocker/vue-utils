@@ -6,7 +6,7 @@ For example, if a user goes to a page, but they're not logged in, you can redire
 with a "jump" url. After processing the login, registration, etc, they can then "jump" back to the place
 they originally intended to go.
 
-Currently supports router params and query. May add cookies later.
+Currently supports router params and query. May add local storage later.
 
 ## Usage
 

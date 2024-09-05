@@ -81,7 +81,7 @@ export function useJumper(name: string) {
 		return jump(replace).catch(next)
 	}
 
-	const redirect = (to: RouteLocation, replace: boolean): JumpReturn => {
+	const redirect = (to: RouteLocation, replace: boolean = false): JumpReturn => {
 		current.value = router.currentRoute.value.path
 
 		const fn = replace ? router.replace : router.push

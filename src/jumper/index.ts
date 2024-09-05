@@ -14,8 +14,16 @@ export function useJumper(name: string) {
 		current.value = undefined
 	}
 
-	const set = (url: string): void => {
-		current.value = url
+	const set = (url?: string | RouteLocationRaw): void => {
+		if (url === undefined) {
+			current.value = router.currentRoute.value.path
+		}
+		else if (typeof url === 'string') {
+			current.value = url
+		}
+		else {
+			current.value = router.resolve(url).path
+		}
 	}
 
 	const get = (): string => {
@@ -32,6 +40,10 @@ export function useJumper(name: string) {
 
 	const exists = () => {
 		return current.value !== undefined
+	}
+
+	const empty = () => {
+		return !exists()
 	}
 
 	const executeJump = (location: string | RouteLocationRaw, replace: boolean): JumpReturn => {
@@ -91,6 +103,7 @@ export function useJumper(name: string) {
 	return {
 		clear,
 		current,
+		empty,
 		exists,
 		get,
 		getSafe,

@@ -1,5 +1,5 @@
 import { isNavigationFailure } from 'vue-router'
-import { RouteLocation } from 'vue-router'
+import { RouteLocationRaw } from 'vue-router'
 import { Router } from 'vue-router'
 import { useRouter } from 'vue-router'
 import { useSessionStorage } from '@vueuse/core'
@@ -34,7 +34,7 @@ export function useJumper(name: string) {
 		return current.value !== undefined
 	}
 
-	const executeJump = (location: string | RouteLocation, replace: boolean): JumpReturn => {
+	const executeJump = (location: string | RouteLocationRaw, replace: boolean): JumpReturn => {
 		if (typeof location !== 'string') {
 			location = router.resolve(location).path
 		}
@@ -65,7 +65,7 @@ export function useJumper(name: string) {
 		return executeJump(url, replace)
 	}
 
-	const jumpOrFirst = (locations: RouteLocation[], replace: boolean = false): JumpReturn => {
+	const jumpOrFirst = (locations: RouteLocationRaw[], replace: boolean = false): JumpReturn => {
 		let index = 0
 
 		function next(lastError: Error): Promise<any> {
@@ -81,7 +81,7 @@ export function useJumper(name: string) {
 		return jump(replace).catch(next)
 	}
 
-	const redirect = (to: RouteLocation, replace: boolean = false): JumpReturn => {
+	const redirect = (to: RouteLocationRaw, replace: boolean = false): JumpReturn => {
 		current.value = router.currentRoute.value.path
 
 		const fn = replace ? router.replace : router.push

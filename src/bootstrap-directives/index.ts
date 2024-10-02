@@ -1,6 +1,5 @@
 import type { App } from 'vue'
 import type { DirectiveBinding } from 'vue'
-import { watch } from 'vue'
 
 export type Controller = {
 	dispose(): void
@@ -39,13 +38,13 @@ export const mappedDirective = <T extends Controller>(app: App, directive: strin
 
 	app.directive(directive, {
 		mounted(element: HTMLElement, binding: DirectiveBinding) {
-			watch(binding, () => reset(element, binding))
+			reset(element, binding)
 		},
 		unmounted(element: HTMLElement, _binding: DirectiveBinding) {
 			off(element)
 		},
 		updated(element: HTMLElement, binding: DirectiveBinding) {
-			watch(binding, () => reset(element, binding))
+			reset(element, binding)
 		},
 	})
 }

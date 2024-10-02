@@ -1,42 +1,51 @@
 import type { App } from 'vue'
+import type { DirectiveBinding } from 'vue'
+import { watch } from 'vue'
 
-export const mappedDirective = <T extends { dispose(): void }>(app: App, directive: string, creator: (el: HTMLElement) => T) => {
+export type Controller = {
+	dispose(): void
+	update(): void
+}
+
+export const mappedDirective = <T extends Controller>(app: App, directive: string, creator: (el: HTMLElement) => T) => {
 	const map = new Map<HTMLElement, T>()
 
-	function on(e: HTMLElement) {
-		if (!map.has(e)) {
-			map.set(e, creator(e))
+	function on(element: HTMLElement) {
+		const controller = map.get(element)
+		if (controller) {
+			controller.update()
+		}
+		else {
+			map.set(element, creator(element))
 		}
 	}
 
-	function off(el: HTMLElement) {
-		const existing = map.get(el)
-		if (existing) {
-			existing.dispose()
-			map.delete(el)
+	function off(element: HTMLElement) {
+		const controller = map.get(element)
+		if (controller) {
+			controller.dispose()
+			map.delete(element)
 		}
 	}
 
-	function reset(e: HTMLElement) {
-		off(e)
-		on(e)
+	function reset(element: HTMLElement, binding: DirectiveBinding) {
+		if (binding.value === undefined || binding.value) {
+			on(element)
+		}
+		else {
+			off(element)
+		}
 	}
 
 	app.directive(directive, {
-		mounted(e: HTMLElement, binding) {
-			if (binding.value === undefined || binding.value) {
-				on(e)
-			}
+		mounted(element: HTMLElement, binding: DirectiveBinding) {
+			watch(binding, () => reset(element, binding))
 		},
-		unmounted(e: HTMLElement, binding) {
-			if (binding.value === undefined || binding.value) {
-				off(e)
-			}
+		unmounted(element: HTMLElement, _binding: DirectiveBinding) {
+			off(element)
 		},
-		updated(e: HTMLElement, binding) {
-			if (binding.value === undefined || binding.value) {
-				reset(e)
-			}
+		updated(element: HTMLElement, binding: DirectiveBinding) {
+			watch(binding, () => reset(element, binding))
 		},
 	})
 }

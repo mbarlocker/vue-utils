@@ -4,44 +4,22 @@
 			v-bind="containerAttrs"
 			class="input-group"
 		>
-			<slot name="prepend">
-				<div class="input-group-text" v-if="$slots.prependText || prependIcon">
-					<slot name="prependText">
-						<font-awesome-icon v-if="prependIcon" :icon="prependIcon" fixedWidth />
-					</slot>
-				</div>
-			</slot>
-
-			<div>
-				<input
-					ref="inputElement"
-					v-bind="$attrs"
-					type="file"
-					v-focus="autofocus"
-					:autofocus="autofocus"
-					:id="id"
-					class="form-control"
-					:readonly="readonly"
-					:disabled="disabled"
-					:tabIndex="(readonly || disabled) ? -1 : 0"
-					@focus="$emit('focus', $event)"
-					@blur="$emit('blur', $event)"
-					@change="handleChange"
-				/>
-			</div>
-
-			<slot name="append">
-				<div class="input-group-text" v-if="$slots.appendText || appendIcon">
-					<slot name="appendText">
-						<font-awesome-icon v-if="appendIcon" :icon="appendIcon" fixedWidth />
-					</slot>
-				</div>
-			</slot>
+			<input
+				ref="inputElement"
+				v-bind="$attrs"
+				type="file"
+				v-focus="autofocus"
+				:autofocus="autofocus"
+				:id="id"
+				class="form-control"
+				:readonly="readonly"
+				:disabled="disabled"
+				:tabIndex="(readonly || disabled) ? -1 : 0"
+				@focus="$emit('focus', $event)"
+				@blur="$emit('blur', $event)"
+				@change="handleChange"
+			/>
 		</div>
-
-		<slot name="help">
-			<div v-if="helpText" class="form-help"> {{helpText}} </div>
-		</slot>
 	</div>
 </template>
 
@@ -88,21 +66,9 @@ export default defineComponent({
 			type: Boolean,
 			default: false,
 		},
-		helpText: {
-			type: String,
-			default: '',
-		},
 		noMargin: {
 			type: Boolean,
 			default: false,
-		},
-		prependIcon: {
-			type: [String, Array],
-			required: false,
-		},
-		appendIcon: {
-			type: [String, Array],
-			required: false,
 		},
 		containerAttrs: {
 			type: Object,

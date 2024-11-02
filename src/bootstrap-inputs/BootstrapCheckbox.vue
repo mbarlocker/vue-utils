@@ -17,7 +17,8 @@
 					v-focus="autofocus"
 					:autofocus="autofocus"
 					:id="id"
-					type="checkbox"
+					:name="name"
+					:type="type"
 					v-model="modelValue"
 					class="form-check-input"
 					:class="{ 'btn-check': useButton }"
@@ -92,6 +93,14 @@ export default defineComponent({
 		},
 		containerAttrs: {
 			type: Object,
+			required: false,
+		},
+		type: {
+			type: String,
+			default: 'checkbox',
+		},
+		name: {
+			type: String,
 			required: false,
 		},
 	},

@@ -12,6 +12,7 @@
 		@keydown="onKeydown"
 		@keypress="$emit('keypress', $event)"
 		@keyup="$emit('keyup', $event)"
+		@paste="$emit('paste', $event)"
 	>
 		<template v-slot:prepend v-if="$slots.prepend"><slot name="prepend" /></template>
 		<template v-slot:prependText v-if="$slots.prependText"><slot name="prependText" /></template>
@@ -137,6 +138,7 @@ export default defineComponent({
 		'keydown',
 		'keypress',
 		'keyup',
+		'paste',
 	],
 	setup: (props, context) => {
 		const inputElement = ref<HTMLInputElement>()

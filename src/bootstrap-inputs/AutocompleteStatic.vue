@@ -10,6 +10,7 @@
 		@keydown="$emit('keydown', $event)"
 		@keypress="$emit('keypress', $event)"
 		@keyup="$emit('keyup', $event)"
+		@paste="$emit('paste', $event)"
 	>
 		<template v-for="(_, name) in $slots" v-slot:[name]="slotData">
 			<slot :name="name" v-bind="slotData" />
@@ -48,6 +49,7 @@ export default defineComponent({
 		'keydown',
 		'keypress',
 		'keyup',
+		'paste',
 	],
 	setup: (props, _context) => {
 		const inputElement = ref<HTMLInputElement>()

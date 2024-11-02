@@ -34,6 +34,7 @@
 					@keyup="$emit('keyup', $event)"
 					@keypress="handleKeypress($event)"
 					@input="handleInput(($event.target! as HTMLInputElement).value)"
+					@paste="$emit('paste', $event)"
 				/>
 				<label v-if="label" :for="id">{{label}}</label>
 			</div>
@@ -121,6 +122,7 @@ export default defineComponent({
 		'keydown',
 		'keyup',
 		'keypress',
+		'paste',
 	],
 	setup: (props, context) => {
 		const inputElement = ref<HTMLInputElement>()

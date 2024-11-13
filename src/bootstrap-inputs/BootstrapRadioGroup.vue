@@ -1,5 +1,5 @@
 <template>
-	<BootstrapRadioButton
+	<BootstrapRadio
 		v-for="option in options"
 		:key="option.id"
 		v-model="modelValue"
@@ -11,18 +11,22 @@
 </template>
 
 <script lang="ts">
+import BootstrapRadio from './BootstrapRadio.vue'
 import type { PropType } from 'vue'
 import { computed } from 'vue'
 import { defineComponent } from 'vue'
 import { useVModel } from '../vmodel/index.js'
 
 export interface Option {
-	id: string | number
+	id: string
 	name: string
 	disabled?: boolean
 }
 
 export default defineComponent({
+	components: {
+		BootstrapRadio,
+	},
 	props: {
 		modelValue: {
 			type: [String, Number],

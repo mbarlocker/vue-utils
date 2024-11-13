@@ -38,7 +38,6 @@
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
 import { useVModel } from '../vmodel/index.js'
-import { watchEffect } from 'vue'
 
 export default defineComponent({
 	inheritAttrs: false,

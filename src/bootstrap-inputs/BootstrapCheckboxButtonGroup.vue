@@ -16,7 +16,6 @@
 import BootstrapCheckboxButton from './BootstrapCheckboxButton.vue'
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
-import { ref } from 'vue'
 import { useVModel } from '../vmodel/index.js'
 
 export interface Option {

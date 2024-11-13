@@ -74,7 +74,6 @@ import { isString } from 'lodash'
 import { ref } from 'vue'
 import { useVModel } from '../vmodel/index.js'
 import { watch } from 'vue'
-import { watchEffect } from 'vue'
 
 export type Option = string | {
 	id: any

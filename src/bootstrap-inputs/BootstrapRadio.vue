@@ -9,6 +9,7 @@
 					ref="inputElement"
 					v-bind="$attrs"
 					v-focus="autofocus"
+					type="radio"
 					:autofocus="autofocus"
 					:id="id"
 					:name="name"

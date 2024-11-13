@@ -4,22 +4,17 @@
 			v-bind="containerAttrs"
 			class="input-group d-grid"
 		>
-			<div
-				:class="{
-					'form-check': !useButton,
-					'form-switch': useSwitch,
-					'd-grid': useButton,
-				}"
-			>
+			<div class="form-check">
 				<input
 					ref="inputElement"
 					v-bind="$attrs"
 					v-focus="autofocus"
 					:autofocus="autofocus"
 					:id="id"
+					:name="name"
+					:value="value"
 					v-model="modelValue"
 					class="form-check-input"
-					:class="{ 'btn-check': useButton }"
 					@focus="$emit('focus', $event)"
 					@blur="$emit('blur', $event)"
 				/>
@@ -27,9 +22,6 @@
 					v-if="label || $slots.label"
 					:for="id"
 					class="form-check-label"
-					:class="{
-						[`btn ${buttonClass}`]: useButton,
-					}"
 				>
 					<slot name="label">
 						{{label}}
@@ -53,7 +45,7 @@ export default defineComponent({
 	inheritAttrs: false,
 	props: {
 		modelValue: {
-			type: Boolean,
+			type: String,
 			default: false,
 		},
 		id: {
@@ -76,21 +68,17 @@ export default defineComponent({
 			type: Boolean,
 			default: false,
 		},
-		useSwitch: {
-			type: Boolean,
-			default: false,
-		},
-		useButton: {
-			type: Boolean,
-			default: false,
-		},
-		buttonClass: {
-			type: String,
-			default: 'btn-outline-secondary',
-		},
 		containerAttrs: {
 			type: Object,
 			required: false,
+		},
+		name: {
+			type: String,
+			required: false,
+		},
+		value: {
+			type: String,
+			required: true,
 		},
 	},
 	emits: [

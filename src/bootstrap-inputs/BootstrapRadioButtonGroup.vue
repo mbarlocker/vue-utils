@@ -1,34 +1,20 @@
 <template>
-	<div class="btn-group">
-		<template v-for="option in options" :key="typeof option === 'string' ? option : option.id">
-			<input
-				v-model="modelValue"
-				type="radio"
-				class="btn-check"
-				:name="name"
-				:checked="modelValue === (typeof option === 'string' ? option : option.id)"
-				:value="typeof option === 'string' ? option : option.id"
-				:id="`${id}-${typeof option === 'string' ? option : option.id}`"
-				:disabled="typeof option === 'string' ? false : option.disabled"
-				@input="$emit('update:modelValue', ($event.target! as HTMLInputElement).value)"
-			/>
-
-			<label
-				:class="`btn btn-${size} btn-outline-${color}`"
-				:for="`${id}-${typeof option === 'string' ? option : option.id}`"
-			>
-				{{typeof option === 'string' ? option : option.name}}
-			</label>
-		</template>
-	</div>
+	<BootstrapRadioButton
+		v-for="option in options"
+		:key="option.id"
+		v-model="modelValue"
+		:name="name"
+		:value="option.id"
+		:disabled="option.disabled"
+		:label="option.name"
+	/>
 </template>
 
 <script lang="ts">
 import type { PropType } from 'vue'
 import { computed } from 'vue'
 import { defineComponent } from 'vue'
-import { ref } from 'vue'
-import { watchEffect } from 'vue'
+import { useVModel } from '../vmodel/index.js'
 
 export interface Option {
 	id: string | number
@@ -50,10 +36,6 @@ export default defineComponent({
 			type: String,
 			default: () => `radio-${+new Date}-${Math.random()}`,
 		},
-		id: {
-			type: String,
-			default: () => `radio-${+new Date}-${Math.random()}`,
-		},
 		size: {
 			type: String,
 			default: '',
@@ -66,9 +48,8 @@ export default defineComponent({
 	emits: [
 		'update:modelValue',
 	],
-	setup: (props, _context) => {
-		const modelValue = ref('')
-		watchEffect(() => modelValue.value = `${props.modelValue}`)
+	setup: (props, context) => {
+		const modelValue = useVModel(() => `${props.modelValue}`, (value) => context.emit('update:modelValue', value))
 
 		const options = computed<Option[]>(() => {
 			return props.options.map(o => {

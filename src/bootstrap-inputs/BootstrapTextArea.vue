@@ -22,7 +22,6 @@
 					@keydown="$emit('keydown', $event)"
 					@keyup="$emit('keyup', $event)"
 					@keypress="handleKeypress($event)"
-					@input="$emit('update:modelValue', ($event.target! as HTMLInputElement).value)"
 					@paste="$emit('paste', $event)"
 				/>
 				<label v-if="label" :for="id">{{label}}</label>
@@ -38,6 +37,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
+import { useVModel } from '../vmodel/index.js'
 import { watchEffect } from 'vue'
 
 export default defineComponent({
@@ -92,8 +92,7 @@ export default defineComponent({
 	setup: (props, context) => {
 		const inputElement = ref<HTMLInputElement>()
 
-		const modelValue = ref<string | number>('')
-		watchEffect(() => modelValue.value = props.modelValue)
+		const modelValue = useVModel(() => props.modelValue, (value) => context.emit('update:modelValue', value))
 
 		function focus() {
 			inputElement.value?.focus()
@@ -103,14 +102,9 @@ export default defineComponent({
 			inputElement.value?.select()
 		}
 
-		function setValue(text: string) {
-			modelValue.value = text
-			context.emit('update:modelValue', text)
-		}
-
 		function trim() {
 			if (props.trim) {
-				setValue(modelValue.value.toString().trim())
+				modelValue.value = modelValue.value.toString().trim()
 			}
 		}
 
@@ -134,7 +128,6 @@ export default defineComponent({
 			inputElement,
 			modelValue,
 			select,
-			setValue,
 		}
 	},
 })

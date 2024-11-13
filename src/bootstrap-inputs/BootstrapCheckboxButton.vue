@@ -5,7 +5,6 @@
 			type="checkbox"
 			class="btn-check"
 			:id="id"
-			@input="toggle()"
 		/>
 
 		<label
@@ -19,8 +18,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { ref } from 'vue'
-import { watchEffect } from 'vue'
+import { useVModel } from '../vmodel/index.js'
 
 export default defineComponent({
 	props: {
@@ -49,17 +47,10 @@ export default defineComponent({
 		'update:modelValue',
 	],
 	setup: (props, context) => {
-		const modelValue = ref(false)
-		watchEffect(() => modelValue.value = props.modelValue)
-
-		function toggle() {
-			modelValue.value = !modelValue.value
-			context.emit('update:modelValue', modelValue.value)
-		}
+		const modelValue = useVModel(() => props.modelValue, (value) => context.emit('update:modelValue', value))
 
 		return {
 			modelValue,
-			toggle,
 		}
 	},
 })

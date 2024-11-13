@@ -12,7 +12,6 @@
 				v-model="modelValue"
 				autocomplete="off"
 				noMargin
-				@update:modelValue="$emit('update:modelValue', $event)"
 				@keydown="onKeydown"
 				@keyup="$emit('keyup', $event)"
 				@keypress="$emit('keypress', $event)"
@@ -37,8 +36,8 @@
 import BootstrapInput from './BootstrapInput.vue'
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
+import { useVModel } from '../vmodel/index.js'
 import { vOnClickOutside } from '@vueuse/components'
-import { watchEffect } from 'vue'
 
 export default defineComponent({
 	inheritAttrs: false,
@@ -76,8 +75,7 @@ export default defineComponent({
 		const inputContainer = ref<HTMLElement>()
 		const inputElement = ref<HTMLInputElement>()
 
-		const modelValue = ref('')
-		watchEffect(() => modelValue.value = `${props.modelValue}`)
+		const modelValue = useVModel(() => `${props.modelValue}`, (value) => context.emit('update:modelValue', value))
 
 		const showDropdown = ref(false)
 

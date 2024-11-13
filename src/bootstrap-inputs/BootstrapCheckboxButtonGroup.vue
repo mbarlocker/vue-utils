@@ -2,7 +2,7 @@
 	<div class="btn-group">
 		<BootstrapCheckboxButton
 			v-for="option in options" :key="typeof option === 'string' ? option : option.id"
-			v-model="modelValue[typeof option === 'string' ? option : option.id]"
+			:modelValue="modelValue[typeof option === 'string' ? option : option.id]"
 			@update:modelValue="set(typeof option === 'string' ? option : option.id, $event)"
 			:label="typeof option === 'string' ? option : option.id"
 			:id="id"
@@ -17,7 +17,7 @@ import BootstrapCheckboxButton from './BootstrapCheckboxButton.vue'
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
-import { watchEffect } from 'vue'
+import { useVModel } from '../vmodel/index.js'
 
 export interface Option {
 	id: string
@@ -55,12 +55,10 @@ export default defineComponent({
 		'update:modelValue',
 	],
 	setup: (props, context) => {
-		const modelValue = ref<Record<string, boolean>>({})
-		watchEffect(() => modelValue.value = props.modelValue)
-
+		const modelValue = useVModel(() => props.modelValue, (value) => context.emit('update:modelValue', value))
+		
 		function set(id: string, value: boolean) {
 			modelValue.value[id] = value
-			context.emit('update:modelValue', modelValue.value)
 		}
 
 		return {

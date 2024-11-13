@@ -23,7 +23,6 @@
 					class="form-select"
 					@focus="$emit('focus', $event)"
 					@blur="$emit('blur', $event)"
-					@change="$emit('update:modelValue', ($event.target! as HTMLInputElement).value)"
 				>
 					<slot name="options">
 						<option v-if="emptyOption" value=""></option>
@@ -65,7 +64,7 @@ import type { PropType } from 'vue'
 import { computed } from 'vue'
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
-import { watchEffect } from 'vue'
+import { useVModel } from '../vmodel/index.js'
 
 export interface Option {
 	id: string | number
@@ -127,11 +126,10 @@ export default defineComponent({
 		'focus',
 		'blur',
 	],
-	setup: (props, _context) => {
+	setup: (props, context) => {
 		const inputElement = ref<HTMLInputElement>()
 
-		const modelValue = ref('')
-		watchEffect(() => modelValue.value = `${props.modelValue}`)
+		const modelValue = useVModel(() => `${props.modelValue}`, (value) => context.emit('update:modelValue', value))
 
 		const options = computed(() => {
 			return props.options.map(o => {

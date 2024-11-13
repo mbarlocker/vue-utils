@@ -57,7 +57,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
-import { watchEffect } from 'vue'
+import { useVModel } from '../vmodel/index.js'
 
 export default defineComponent({
 	inheritAttrs: false,
@@ -127,8 +127,7 @@ export default defineComponent({
 	setup: (props, context) => {
 		const inputElement = ref<HTMLInputElement>()
 
-		const modelValue = ref<string | number>('')
-		watchEffect(() => modelValue.value = props.modelValue)
+		const modelValue = useVModel(() => props.modelValue, (value) => context.emit('update:modelValue', value))
 
 		function focus() {
 			inputElement.value?.focus()
@@ -138,20 +137,14 @@ export default defineComponent({
 			inputElement.value?.select()
 		}
 
-		function setValue(text: string) {
-			modelValue.value = text
-			context.emit('update:modelValue', text)
-		}
-
 		function trim() {
 			if (props.trim) {
-				setValue(modelValue.value.toString().trim())
+				modelValue.value = modelValue.value.toString().trim()
 			}
 		}
 
 		function handleInput(value: string | number) {
 			modelValue.value = value
-			context.emit('update:modelValue', value)
 		}
 
 		function handleBlur(event: FocusEvent) {
@@ -175,7 +168,6 @@ export default defineComponent({
 			inputElement,
 			modelValue,
 			select,
-			setValue,
 		}
 	},
 })

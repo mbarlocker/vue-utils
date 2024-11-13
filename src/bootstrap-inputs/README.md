@@ -225,6 +225,25 @@ The model is an object of name/selected pairs.
 ```
 
 
+## BootstrapRadioButton
+
+Simplified checkbox with some helpers. Has a `default` slot for label and a `help` slot for help text.
+
+```html
+<BootstrapRadioButton
+	v-model="selected"
+	value="one"
+	label="Radio 1"
+	autofocus
+	helpText="This is to radio something"
+	noMargin
+	:containerAttrs="{}"
+	@focus="onFocus()"
+	@blur="onBlur()"
+/>
+```
+
+
 ## BootstrapRadioButtonGroup
 
 Simplified vue component for [Bootstrap radio button](https://getbootstrap.com/docs/5.3/forms/checks-radios/#radio-toggle-buttons).

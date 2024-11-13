@@ -72,6 +72,7 @@ import { defineComponent } from 'vue'
 import { get } from 'lodash'
 import { isString } from 'lodash'
 import { ref } from 'vue'
+import { useVModel } from '../vmodel/index.js'
 import { watch } from 'vue'
 import { watchEffect } from 'vue'
 
@@ -149,12 +150,10 @@ export default defineComponent({
 
 		const highlightedIndex = ref(-1)
 
-		const text = ref('')
-		watchEffect(() => text.value = `${props.text}`)
+		const text = useVModel(() => `${props.text}`, (value) => context.emit('update:text', value))
 
 		const options = ref(new Array<Option>())
-		const selection = ref<Option>()
-		watchEffect(() => selection.value = props.selection)
+		const selection = useVModel(() => props.selection, (value) => context.emit('update:selection', value))
 
 		let skipSearch = false
 		let searchedText = 'NEVER THE DEFAULT VALUE'
@@ -201,12 +200,10 @@ export default defineComponent({
 		function onTextUpdated(t: string) {
 			if (text.value !== t) {
 				text.value = t
-				context.emit('update:text', t)
 			}
 
 			if (selection.value !== undefined) {
 				selection.value = undefined
-				context.emit('update:selection', undefined)
 			}
 		}
 
@@ -263,8 +260,6 @@ export default defineComponent({
 			skipSearch = true
 
 			selection.value = selected
-			context.emit('update:text', text.value)
-			context.emit('update:selection', selected)
 			context.emit('selected', selected)
 
 			hideDropdown.value = true

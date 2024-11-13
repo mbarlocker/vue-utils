@@ -1,24 +1,13 @@
 <template>
-	<div class="btn-group">
-		<template v-for="option in options" :key="option.id">
-			<input
-				v-model="modelValue"
-				type="radio"
-				class="btn-check"
-				:name="name"
-				:value="option.id"
-				:id="`${id}-${option.id}`"
-				:disabled="option.disabled"
-			/>
-
-			<label
-				:class="`btn btn-${size} btn-outline-${color}`"
-				:for="`${id}-${option.id}`"
-			>
-				{{option.name}}
-			</label>
-		</template>
-	</div>
+	<BootstrapRadioButton
+		v-for="option in options"
+		:key="option.id"
+		v-model="modelValue"
+		:name="name"
+		:value="option.id"
+		:disabled="option.disabled"
+		:label="option.name"
+	/>
 </template>
 
 <script lang="ts">
@@ -46,18 +35,6 @@ export default defineComponent({
 		name: {
 			type: String,
 			default: () => `radio-${+new Date}-${Math.random()}`,
-		},
-		id: {
-			type: String,
-			default: () => `radio-${+new Date}-${Math.random()}`,
-		},
-		size: {
-			type: String,
-			default: '',
-		},
-		color: {
-			type: String,
-			required: true,
 		},
 	},
 	emits: [

@@ -225,12 +225,12 @@ The model is an object of name/selected pairs.
 ```
 
 
-## BootstrapRadioButton
+## BootstrapRadio
 
 Simplified checkbox with some helpers. Has a `default` slot for label and a `help` slot for help text.
 
 ```html
-<BootstrapRadioButton
+<BootstrapRadio
 	v-model="selected"
 	value="one"
 	label="Radio 1"
@@ -240,6 +240,23 @@ Simplified checkbox with some helpers. Has a `default` slot for label and a `hel
 	:containerAttrs="{}"
 	@focus="onFocus()"
 	@blur="onBlur()"
+/>
+```
+
+
+## BootstrapRadioGroup
+
+Simplified vue component for a group of Bootstrap radios
+
+## Usage
+
+```html
+<BootstrapRadioGroup
+	v-model="selected"
+	:options="[
+		{ id: 'one', label: 'Option 1' },
+		{ id: 'two', label: 'Option 2' },
+	]"
 />
 ```
 

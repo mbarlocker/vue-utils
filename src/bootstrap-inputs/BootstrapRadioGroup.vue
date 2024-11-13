@@ -7,6 +7,7 @@
 		:value="option.id"
 		:disabled="option.disabled"
 		:label="option.name"
+		:required="required"
 		noMargin
 	/>
 </template>
@@ -40,6 +41,10 @@ export default defineComponent({
 		name: {
 			type: String,
 			default: () => `radio-${+new Date}-${Math.random()}`,
+		},
+		required: {
+			type: Boolean,
+			default: false,
 		},
 	},
 	emits: [

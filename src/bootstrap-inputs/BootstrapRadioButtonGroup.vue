@@ -9,6 +9,7 @@
 				:value="option.id"
 				:id="`${id}-${option.id}`"
 				:disabled="option.disabled"
+				:required="required"
 			/>
 
 			<label
@@ -58,6 +59,10 @@ export default defineComponent({
 		color: {
 			type: String,
 			required: true,
+		},
+		required: {
+			type: Boolean,
+			default: false,
 		},
 	},
 	emits: [

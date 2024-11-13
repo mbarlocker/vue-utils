@@ -7,6 +7,7 @@
 		:value="option.id"
 		:disabled="option.disabled"
 		:label="option.name"
+		noMargin
 	/>
 </template>
 

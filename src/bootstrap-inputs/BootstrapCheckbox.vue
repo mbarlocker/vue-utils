@@ -19,6 +19,7 @@
 					:id="id"
 					v-model="modelValue"
 					class="form-check-input"
+					type="checkbox"
 					:class="{ 'btn-check': useButton }"
 					@focus="$emit('focus', $event)"
 					@blur="$emit('blur', $event)"

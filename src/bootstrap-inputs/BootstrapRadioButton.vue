@@ -1,23 +1,21 @@
 <template>
-	<span>
-		<input
-			v-model="modelValue"
-			type="radio"
-			class="btn-check"
-			:name="name"
-			:value="value"
-			:id="`${id}`"
-			:disabled="disabled"
-			:required="required"
-		/>
+	<input
+		v-model="modelValue"
+		type="radio"
+		class="btn-check"
+		:name="name"
+		:value="value"
+		:id="`${id}`"
+		:disabled="disabled"
+		:required="required"
+	/>
 
-		<label
-			:class="`btn btn-${size} btn-outline-${color}`"
-			:for="`${id}`"
-		>
-			{{label}}
-		</label>
-	</span>
+	<label
+		:class="`btn ${size === '' ? '' : `btn-${size}`} btn-outline-${color}`"
+		:for="`${id}`"
+	>
+		{{label}}
+	</label>
 </template>
 
 <script lang="ts">

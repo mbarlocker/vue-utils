@@ -1,19 +1,17 @@
 <template>
-	<span>
-		<input
-			v-model="modelValue"
-			type="checkbox"
-			class="btn-check"
-			:id="id"
-		/>
+	<input
+		v-model="modelValue"
+		type="checkbox"
+		class="btn-check"
+		:id="id"
+	/>
 
-		<label
-			:class="`btn btn-${size} btn-outline-${color}`"
-			:for="id"
-		>
-			{{label}}
-		</label>
-	</span>
+	<label
+		:class="`btn btn-${size} btn-outline-${color}`"
+		:for="id"
+	>
+		{{label}}
+	</label>
 </template>
 
 <script lang="ts">

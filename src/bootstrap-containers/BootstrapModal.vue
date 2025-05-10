@@ -1,5 +1,5 @@
 <template>
-	<Teleport defer :to="teleport" :disabled="teleport !== ''">
+	<Teleport :to="teleport" :disabled="teleport !== ''">
 		<div
 			v-bind="$attrs"
 			ref="container"

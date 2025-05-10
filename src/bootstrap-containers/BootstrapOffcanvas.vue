@@ -1,26 +1,30 @@
 <template>
-	<div
-		ref="container"
-		class="offcanvas overflow-hidden"
-		tabindex="-1"
-		:data-bs-scroll="scroll"
-		:data-bs-backdrop="backdrop"
-		:data-bs-keyboard="keyboard"
-	>
-		<template v-if="state !== 'hidden'">
-			<div class="offcanvas-header border-bottom">
-				<h5 class="offcanvas-title">{{header}}</h5>
-				<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-			</div>
-			<div class="offcanvas-body">
-				<slot />
-			</div>
-		</template>
-	</div>
+	<Teleport defer :to="teleport" :disabled="teleport !== ''">
+		<div
+			v-bind="$attrs"
+			ref="container"
+			class="offcanvas overflow-hidden"
+			tabindex="-1"
+			:data-bs-scroll="scroll"
+			:data-bs-backdrop="backdrop"
+			:data-bs-keyboard="keyboard"
+		>
+			<template v-if="state !== 'hidden'">
+				<div class="offcanvas-header border-bottom">
+					<h5 class="offcanvas-title">{{header}}</h5>
+					<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+				</div>
+				<div class="offcanvas-body">
+					<slot />
+				</div>
+			</template>
+		</div>
+	</Teleport>
 </template>
 
 <script lang="ts">
 import * as bootstrap from 'bootstrap'
+import type { PropType } from 'vue'
 import { computed } from 'vue'
 import { defineComponent } from 'vue'
 import { focusFirstEligible } from '../focus/index.js'
@@ -31,6 +35,7 @@ import { useEventListener } from '@vueuse/core'
 import { watchEffect } from 'vue'
 
 export default defineComponent({
+	inheritAttrs: false,
 	props: {
 		open: {
 			type: Boolean,
@@ -55,6 +60,10 @@ export default defineComponent({
 		keyboard: {
 			type: Boolean,
 			default: false,
+		},
+		teleport: {
+			type: [String, Object] as PropType<string | HTMLElement>,
+			default: '#modals',
 		},
 	},
 	emits: [

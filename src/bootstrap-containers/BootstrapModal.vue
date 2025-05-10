@@ -1,34 +1,37 @@
 <template>
-	<div
-		ref="container"
-		class="modal fade"
-		tabindex="-1"
-		:data-bs-backdrop="backdrop"
-		:data-bs-keyboard="keyboard"
-	>
-		<div class="modal-dialog" :class="{
-			'modal-dialog-centered': centered,
-			'modal-dialog-scrollable': scrollable,
-			[`modal-${size}`]: size !== undefined,
-			'd-none': hideDialog,
-		}">
-			<div v-if="state !== 'hidden'" class="modal-content">
-				<div class="modal-header">
-					<slot name="header">
-						<h5 class="modal-title">{{header}}</h5>
-						<button v-if="closeButton" type="button" class="btn-close" data-bs-dismiss="modal" />
-					</slot>
-				</div>
-				<div v-if="$slots.default" class="modal-body">
-					<slot />
-				</div>
-				<div v-if="$slots.footer" class="modal-footer">
-					<!-- Putting buttons here automatically closes the modal. use @click.stop to prevent -->
-					<slot name="footer" />
+	<Teleport defer :to="teleport" :disabled="teleport !== ''">
+		<div
+			v-bind="$attrs"
+			ref="container"
+			class="modal fade"
+			tabindex="-1"
+			:data-bs-backdrop="backdrop"
+			:data-bs-keyboard="keyboard"
+		>
+			<div class="modal-dialog" :class="{
+				'modal-dialog-centered': centered,
+				'modal-dialog-scrollable': scrollable,
+				[`modal-${size}`]: size !== undefined,
+				'd-none': hideDialog,
+			}">
+				<div v-if="state !== 'hidden'" class="modal-content">
+					<div class="modal-header">
+						<slot name="header">
+							<h5 class="modal-title">{{header}}</h5>
+							<button v-if="closeButton" type="button" class="btn-close" data-bs-dismiss="modal" />
+						</slot>
+					</div>
+					<div v-if="$slots.default" class="modal-body">
+						<slot />
+					</div>
+					<div v-if="$slots.footer" class="modal-footer">
+						<!-- Putting buttons here automatically closes the modal. use @click.stop to prevent -->
+						<slot name="footer" />
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</Teleport>
 </template>
 
 <script lang="ts">
@@ -44,6 +47,7 @@ import { useEventListener } from '@vueuse/core'
 import { watchEffect } from 'vue'
 
 export default defineComponent({
+	inheritAttrs: false,
 	props: {
 		open: {
 			type: Boolean,
@@ -84,6 +88,10 @@ export default defineComponent({
 		hideDialog: {
 			type: Boolean,
 			default: false,
+		},
+		teleport: {
+			type: [String, Object] as PropType<string | HTMLElement>,
+			default: '#modals',
 		},
 	},
 	emits: [

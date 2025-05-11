@@ -1,7 +1,7 @@
 {
   "name": "@mbarlocker/vue-utils",
   "type": "module",
-  "version": "0.5.16",
+  "version": "0.5.17",
   "author": "Matthew Barlocker",
   "description": "Common library of random vue utilities that I couldn't find elsewhere on the internet.",
   "license": "MIT",

@@ -1,5 +1,5 @@
 <template>
-	<Teleport :to="teleport" :disabled="teleport !== ''">
+	<Teleport :to="teleport" :disabled="teleport === undefined">
 		<div
 			v-bind="$attrs"
 			ref="container"
@@ -63,7 +63,7 @@ export default defineComponent({
 		},
 		teleport: {
 			type: [String, Object] as PropType<string | HTMLElement>,
-			default: '#modals',
+			required: false,
 		},
 	},
 	emits: [

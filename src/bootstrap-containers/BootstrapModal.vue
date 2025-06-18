@@ -8,28 +8,32 @@
 			:data-bs-backdrop="backdrop"
 			:data-bs-keyboard="keyboard"
 		>
-			<div class="modal-dialog" :class="{
-				'modal-dialog-centered': centered,
-				'modal-dialog-scrollable': scrollable,
-				[`modal-${size}`]: size !== undefined,
-				'd-none': hideDialog,
-			}">
-				<div v-if="state !== 'hidden'" class="modal-content">
-					<div class="modal-header">
-						<slot name="header">
-							<h5 class="modal-title">{{header}}</h5>
-							<button v-if="closeButton" type="button" class="btn-close" data-bs-dismiss="modal" />
-						</slot>
-					</div>
-					<div v-if="$slots.default" class="modal-body">
-						<slot />
-					</div>
-					<div v-if="$slots.footer" class="modal-footer">
-						<!-- Putting buttons here automatically closes the modal. use @click.stop to prevent -->
-						<slot name="footer" />
-					</div>
+			<slot name="dialog">
+				<div class="modal-dialog" :class="{
+					'modal-dialog-centered': centered,
+					'modal-dialog-scrollable': scrollable,
+					[`modal-${size}`]: size !== undefined,
+					'd-none': hideDialog,
+				}">
+					<slot name="content">
+						<div v-if="state !== 'hidden'" class="modal-content">
+							<div class="modal-header">
+								<slot name="header">
+									<h5 class="modal-title">{{header}}</h5>
+									<button v-if="closeButton" type="button" class="btn-close" data-bs-dismiss="modal" />
+								</slot>
+							</div>
+							<div v-if="$slots.default" class="modal-body">
+								<slot />
+							</div>
+							<div v-if="$slots.footer" class="modal-footer">
+								<!-- Putting buttons here automatically closes the modal. use @click.stop to prevent -->
+								<slot name="footer" />
+							</div>
+						</div>
+					</slot>
 				</div>
-			</div>
+			</slot>
 		</div>
 	</Teleport>
 </template>

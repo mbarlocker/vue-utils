@@ -37,13 +37,9 @@ import BootstrapInput from './BootstrapInput.vue'
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
 import { useVModel } from '../vmodel/index.js'
-import { vOnClickOutside } from '@vueuse/components'
 
 export default defineComponent({
 	inheritAttrs: false,
-	directives: {
-		vOnClickOutside,
-	},
 	props: {
 		modelValue: {
 			type: [String, Number],

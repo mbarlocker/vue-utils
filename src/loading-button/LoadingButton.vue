@@ -13,13 +13,9 @@
 import { computed } from 'vue'
 import { defineComponent } from 'vue'
 import { onUnmounted } from 'vue'
-import { vOnClickOutside } from '@vueuse/components'
 import { ref } from 'vue'
 
 export default defineComponent({
-	directives: {
-		vOnClickOutside,
-	},
 	props: {
 		loading: {
 			type: Boolean,

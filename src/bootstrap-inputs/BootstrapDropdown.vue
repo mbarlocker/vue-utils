@@ -40,6 +40,9 @@ import { useVModel } from '../vmodel/index.js'
 
 export default defineComponent({
 	inheritAttrs: false,
+	components: {
+		BootstrapInput,
+	},
 	props: {
 		modelValue: {
 			type: [String, Number],

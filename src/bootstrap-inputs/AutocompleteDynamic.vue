@@ -210,12 +210,12 @@ export default defineComponent({
 			if (event.key === 'ArrowDown' || event.keyCode === 40) {
 				hideDropdown.value = false
 				event.preventDefault()
-				highlightedIndex.value = clamp(highlightedIndex.value + 1, 0, options.value.length)
+				highlightedIndex.value = clamp(highlightedIndex.value + 1, 0, options.value.length - 1)
 			}
 			else if (event.key === 'ArrowUp' || event.keyCode === 38) {
 				hideDropdown.value = false
 				event.preventDefault()
-				highlightedIndex.value = clamp(highlightedIndex.value - 1, 0, options.value.length)
+				highlightedIndex.value = clamp(highlightedIndex.value - 1, 0, options.value.length - 1)
 			}
 			else if (event.key === 'Escape' || event.key === 'Esc' || event.keyCode === 27) {
 				event.preventDefault()

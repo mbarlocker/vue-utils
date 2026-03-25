@@ -9,7 +9,7 @@
 					'disabled': page === 0,
 				}"
 			>
-				<button type="button" class="page-link" @click="goto(0)">First</button>
+				<button type="button" class="page-link" @click="goto(0)"><font-awesome-icon icon="angles-left" /></button>
 			</div>
 
 			<div
@@ -28,7 +28,7 @@
 					'disabled': pages === 0 || page === (pages - 1),
 				}"
 			>
-				<button type="button" class="page-link" @click="goto(pages - 1)">last</button>
+				<button type="button" class="page-link" @click="goto(pages - 1)"><font-awesome-icon icon="angles-right" /></button>
 			</div>
 		</div>
 	</div>

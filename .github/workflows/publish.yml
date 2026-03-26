@@ -24,4 +24,4 @@ jobs:
           yarn install
           yarn clean
           yarn build
-      - run: NODE_AUTH_TOKEN="" npm publish --access public .
+      - run: npm publish --access public .

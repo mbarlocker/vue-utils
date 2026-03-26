@@ -2,10 +2,10 @@
 	<BootstrapDropdown
 		ref="inputElement"
 		v-model="text"
-		type="search"
+		:type="type"
 		:hideDropdown="hideDropdown"
-		:required="required"
-		:pattern="(required || text !== '') && selection === undefined ? '^$' : pattern"
+		:required="required || requireText || (requireSelection && selection === undefined)"
+		:pattern="(required || requireSelection) && selection === undefined ? '^$' : pattern"
 		@update:modelValue="onTextUpdated"
 		@blur="onBlur"
 		@focus="onFocus"
@@ -92,6 +92,10 @@ export default defineComponent({
 			type: [String, Number],
 			default: '',
 		},
+		type: {
+			type: String,
+			default: 'search',
+		},
 		selection: {
 			type: [String, Object] as PropType<Option>,
 			required: false,
@@ -109,6 +113,14 @@ export default defineComponent({
 			required: false,
 		},
 		required: {
+			type: Boolean,
+			default: false,
+		},
+		requireSelection: {
+			type: Boolean,
+			default: false,
+		},
+		requireText: {
 			type: Boolean,
 			default: false,
 		},

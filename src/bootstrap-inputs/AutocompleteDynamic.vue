@@ -237,7 +237,7 @@ export default defineComponent({
 					hideDropdown.value = true
 				}
 			}
-			else if (event.key === 'Enter' || event.keyCode === 13) {
+			else if (event.key === 'Enter' || event.keyCode === 13 || event.key === 'Tab' || event.keyCode === 9) {
 				if (!hideDropdown.value) {
 					event.preventDefault()
 

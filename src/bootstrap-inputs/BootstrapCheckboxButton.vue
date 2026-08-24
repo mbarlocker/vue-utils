@@ -28,7 +28,7 @@ export default defineComponent({
 		},
 		label: {
 			type: String,
-			required: true,
+			default: '',
 		},
 		id: {
 			type: String,

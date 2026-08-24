@@ -8,7 +8,11 @@
 			:id="id"
 			:size="size"
 			:color="color"
-		/>
+		>
+			<template v-for="(_, name) in $slots" v-slot:[name]="slotData">
+				<slot :name="name" :option="option" v-bind="slotData" />
+			</template>
+		</BootstrapCheckboxButton>
 	</div>
 </template>
 

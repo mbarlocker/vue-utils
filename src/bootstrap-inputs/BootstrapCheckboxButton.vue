@@ -1,19 +1,22 @@
 <template>
-	<input
-		v-model="modelValue"
-		type="checkbox"
-		class="btn-check"
-		:id="id"
-	/>
+	<span>
+		<input
+			v-model="modelValue"
+			type="checkbox"
+			class="btn-check"
+			:id="id"
+			:disabled="disabled"
+		/>
 
-	<label
-		:class="`btn btn-${size} btn-outline-${color}`"
-		:for="id"
-	>
-		<slot name="label">
-			{{label}}
-		</slot>
-	</label>
+		<label
+			:class="`btn btn-${size} btn-outline-${color}`"
+			:for="id"
+		>
+			<slot name="label">
+				{{label}}
+			</slot>
+		</label>
+	</span>
 </template>
 
 <script lang="ts">
@@ -41,6 +44,10 @@ export default defineComponent({
 		color: {
 			type: String,
 			required: true,
+		},
+		disabled: {
+			type: Boolean,
+			default: false,
 		},
 	},
 	emits: [

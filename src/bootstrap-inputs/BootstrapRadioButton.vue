@@ -14,7 +14,9 @@
 		:class="`btn ${size === '' ? '' : `btn-${size}`} btn-outline-${color}`"
 		:for="`${id}`"
 	>
-		{{label}}
+		<slot name="label">
+			{{label}}
+		</slot>
 	</label>
 </template>
 

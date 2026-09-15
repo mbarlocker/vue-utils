@@ -13,6 +13,7 @@
 	<label
 		:class="`btn ${size === '' ? '' : `btn-${size}`} btn-outline-${color}`"
 		:for="`${id}`"
+		v-bind="buttonArgs"
 	>
 		<slot name="label">
 			{{label}}
@@ -61,6 +62,10 @@ export default defineComponent({
 		disabled: {
 			type: Boolean,
 			default: false,
+		},
+		buttonArgs: {
+			type: Object,
+			required: false,
 		},
 	},
 	emits: [

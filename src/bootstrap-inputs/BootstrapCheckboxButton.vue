@@ -6,6 +6,7 @@
 			class="btn-check"
 			:id="id"
 			:disabled="disabled"
+			:required="required"
 		/>
 
 		<label
@@ -44,6 +45,10 @@ export default defineComponent({
 		color: {
 			type: String,
 			required: true,
+		},
+		required: {
+			type: Boolean,
+			default: false,
 		},
 		disabled: {
 			type: Boolean,

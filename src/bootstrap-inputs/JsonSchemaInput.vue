@@ -91,6 +91,7 @@ export default defineComponent({
 			else if (definition.format === 'date-time') { ret.type ??= 'datetime-local' }
 			else if (definition.format === 'date') { ret.type ??= 'date' }
 			else if (definition.format === 'time') { ret.type ??= 'time' }
+			else if (definition.format === 'uri') { ret.type ??= 'url' }
 			else if (definition.type === 'integer') { ret.type ??= 'number' }
 			else if (definition.type === 'number') { ret.type ??= 'number' }
 			else if (definition.type === 'boolean') { ret.type ??= 'boolean' }

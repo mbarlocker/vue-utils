@@ -27,17 +27,21 @@
 					<slot name="options">
 						<option v-if="emptyOption" value=""></option>
 						<template v-for="option in options" :key="option.id">
-							<optgroup
-								v-if="option.group"
-								:label="option.name"
-							/>
-							<option
-								v-else
-								:value="option.id"
-								:disabled="option.disabled"
-							>
-								{{ option.name }}
-							</option>
+							<slot name="option" :option="option">
+								<optgroup
+									v-if="option.group"
+									:label="option.name"
+								/>
+								<option
+									v-else
+									:value="option.id"
+									:disabled="option.disabled"
+								>
+									<slot name="option-label">
+										{{ option.name }}
+									</slot>
+								</option>
+							</slot>
 						</template>
 					</slot>
 				</select>
